@@ -1,0 +1,18 @@
+{
+    "required": true,
+    "package": "io.github.opencubicchunks.cubicchunks.mixin",
+    "compatibilityLevel": "JAVA_17",
+    "minVersion": "0.8.5",
+    "refmap": "cubicchunks.refmap.json",
+    "mixins": [
+        "core.MixinChunkAccess",
+        "core.MixinLevelChunk",
+        "server.MixinServerLevel"
+    ],
+    "client": [
+        "client.MixinClientLevel"
+    ],
+    "injectors": {
+        "defaultRequire": 1
+    }
+}

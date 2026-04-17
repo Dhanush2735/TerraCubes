@@ -1,0 +1,31 @@
+modLoader="javafml"
+loaderVersion="[47,)"
+license="LGPL-2.1"
+
+[[mods]]
+modId="terracubes"
+version="${file.jarVersion}"
+displayName="TerraCubes"
+authors="Gamer2735, based on OpenCubicChunks"
+description='''
+TerraCubes is a 3D cubic world generation engine that replaces Minecraft's default chunk system.
+
+It enables expanded vertical worlds using 16x16x16 cube-based storage, allowing deeper caves,
+higher terrain, and more complex world generation.
+
+Based on the Cubic Chunks project by OpenCubicChunks.
+'''
+
+[[dependencies.terracubes]]
+modId="forge"
+mandatory=true
+versionRange="[47,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.terracubes]]
+modId="minecraft"
+mandatory=true
+versionRange="[1.20.1,1.21)"
+ordering="NONE"
+side="BOTH"
