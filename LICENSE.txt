@@ -1,0 +1,53 @@
+TerraCubes
+Copyright (C) 2026 YourName
+
+This project is based on the Cubic Chunks project by the OpenCubicChunks Team.
+
+-----------------------------------------------------------------------
+
+GNU LESSER GENERAL PUBLIC LICENSE
+Version 2.1, February 1999
+
+Copyright (C) 1991, 1999 Free Software Foundation, Inc.
+51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
+
+Everyone is permitted to copy and distribute verbatim copies
+of this license document, but changing it is not allowed.
+
+[Full LGPL 2.1 text continues...]
+
+You may obtain the full license text here:
+http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt
+
+-----------------------------------------------------------------------
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Lesser General Public License as published
+by the Free Software Foundation; either version 2.1 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+-----------------------------------------------------------------------
+
+Attribution:
+
+This project includes and is derived from:
+
+Cubic Chunks (OpenCubicChunks Team)
+https://github.com/OpenCubicChunks/CubicChunks2
+
+All original authors retain copyright over their respective contributions.
+
+-----------------------------------------------------------------------
+
+MCP Notice:
+
+This project does NOT include Minecraft source code.
+
+This project may depend on mappings or tools that use MCP data.
+MCP data is NOT redistributable without permission from the MCP team.
+
+Users must obtain Minecraft and required dependencies separately.

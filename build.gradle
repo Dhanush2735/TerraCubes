@@ -1,0 +1,81 @@
+plugins {
+    id 'eclipse'
+    id 'idea'
+    id 'maven-publish'
+    id 'net.minecraftforge.gradle' version '6.0.+'
+    id 'org.spongepowered.mixin' version '0.7.+'
+
+}
+
+version = '2.0.0-alpha'
+group = 'io.github.opencubicchunks'
+archivesBaseName = 'cubicchunks'
+
+java.toolchain.languageVersion = JavaLanguageVersion.of(17)
+
+minecraft {
+    mappings channel: 'official', version: '1.20.1'
+    
+    accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
+    
+    runs {
+        client {
+            workingDirectory project.file('run')
+            property 'forge.logging.markers', 'REGISTRIES'
+            property 'forge.logging.console.level', 'debug'
+            property 'mixin.env.remapRefMap', 'true'
+            property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
+            mods {
+                cubicchunks {
+                    source sourceSets.main
+                }
+            }
+        }
+        server {
+            workingDirectory project.file('run')
+            property 'forge.logging.markers', 'REGISTRIES'
+            property 'forge.logging.console.level', 'debug'
+            mods {
+                cubicchunks {
+                    source sourceSets.main
+                }
+            }
+        }
+    }
+}
+
+mixin {
+    add sourceSets.main, "cubicchunks.refmap.json"
+    config "cubicchunks.mixins.json"
+}
+
+repositories {
+    maven { url = "https://repo.spongepowered.org/maven" }
+}
+
+dependencies {
+    minecraft 'net.minecraftforge:forge:1.20.1-47.2.0'
+    
+    
+}
+
+jar {
+    manifest {
+        attributes([
+            "Specification-Title"     : "cubicchunks",
+            "Specification-Vendor"    : "OpenCubicChunks",
+            "Specification-Version"   : "1",
+            "Implementation-Title"    : project.name,
+            "Implementation-Version"  : project.jar.archiveVersion,
+            "Implementation-Vendor"   : "OpenCubicChunks",
+            "MixinConfigs"            : "cubicchunks.mixins.json"
+        ])
+    }
+}
+
+// Ensure refmap is included in JAR
+processResources {
+    from(tasks.compileJava) {
+        include 'cubicchunks.refmap.json'
+    }
+}
